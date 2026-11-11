@@ -25,7 +25,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TXS_VERSION = '1.0.20';
+const TXS_VERSION = '1.0.21';
 const TXS_SLUG    = 'sliven';
 const TXS_MARKER  = '.travelx-sliven';
 
