@@ -118,7 +118,7 @@ save(resize_h(trim(tr), 132), "partner-travelradar.webp", quality=90, method=6)
 # ── speakers: transparent cut-outs from the Figma announcement posts ──
 for name in ("yanev", "ivanov", "petrova", "todorov", "draganova",
              "alexiev", "dimitrov", "todorova", "sirakov",
-             "rangelova", "zlatina"):
+             "rangelova", "zlatina", "lilov", "markov", "petrov", "stoyanov"):
     im = trim(Image.open(SRC / f"speaker-{name}.png").convert("RGBA"))
     save(resize_w(im, 640), f"speaker-{name}.webp", quality=82, method=6)
 
