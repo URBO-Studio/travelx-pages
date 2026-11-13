@@ -82,12 +82,11 @@ for rgb, name in (((255, 255, 255), "crest-white.webp"), ((0, 0, 0), "crest-blac
 
 # ── one-colour partners: the logo's alpha as a black silhouette, so they sit
 #    with the black crest. Sources are the originals behind the white logos on
-#    the main TravelX sponsors screen (Figma 4822:559; the pin from travelx.bg).
+#    the main TravelX sponsors screen (Figma 4822:559).
 for src, out, h in [
     ("partner-seomax.png", "partner-seomax.webp", 132),            # shown 44px
     ("partner-img-connect-card.png", "partner-img-connect-card.webp", 132),
     ("partner-devin.png", "partner-devin.webp", 132),
-    ("partner-pin.png", "partner-pin.webp", 160),                  # shown 64px; source is 87px
     ("partner-dives.png", "partner-dives.webp", 160),              # white-on-transparent original
     ("partner-abtta.png", "partner-abtta.webp", 132),
 ]:
@@ -101,6 +100,7 @@ for src, out, h in [
 for src, out, h in [
     ("partner-travelnews.png", "partner-travelnews.webp", 132),
     ("partner-sliven-press.png", "partner-sliven-press.webp", 132),
+    ("partner-hotelspoint.png", "partner-hotelspoint.webp", 132),
 ]:
     save(resize_h(trim(Image.open(SRC / src).convert("RGBA")), h), out, quality=90, method=6)
 
@@ -116,9 +116,10 @@ for y in range(tr.height):
 save(resize_h(trim(tr), 132), "partner-travelradar.webp", quality=90, method=6)
 
 # ── speakers: transparent cut-outs from the Figma announcement posts ──
-for name in ("yanev", "ivanov", "petrova", "todorov", "draganova",
+for name in ("yanev", "ivanov", "petrova", "todorov", "draganova-2",
              "alexiev", "dimitrov", "todorova", "sirakov",
-             "rangelova", "zlatina", "lilov", "markov", "petrov", "stoyanov"):
+             "rangelova", "zlatina", "lilov", "markov", "stoyanov",
+             "georgiev", "gramova", "stoilov", "mermekliev"):
     im = trim(Image.open(SRC / f"speaker-{name}.png").convert("RGBA"))
     save(resize_w(im, 640), f"speaker-{name}.webp", quality=82, method=6)
 
