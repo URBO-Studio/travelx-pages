@@ -86,7 +86,6 @@ for rgb, name in (((255, 255, 255), "crest-white.webp"), ((0, 0, 0), "crest-blac
 for src, out, h in [
     ("partner-seomax.png", "partner-seomax.webp", 132),            # shown 44px
     ("partner-img-connect-card.png", "partner-img-connect-card.webp", 132),
-    ("partner-devin.png", "partner-devin.webp", 132),
     ("partner-dives.png", "partner-dives.webp", 160),              # white-on-transparent original
     ("partner-abtta.png", "partner-abtta.webp", 132),
 ]:
@@ -101,6 +100,8 @@ for src, out, h in [
     ("partner-travelnews.png", "partner-travelnews.webp", 132),
     ("partner-sliven-press.png", "partner-sliven-press.webp", 132),
     ("partner-hotelspoint.png", "partner-hotelspoint.webp", 132),
+    ("partner-devin-2.png", "partner-devin-2.webp", 160),         # shown 64px
+    ("partner-pght.png", "partner-pght.webp", 160),
 ]:
     save(resize_h(trim(Image.open(SRC / src).convert("RGBA")), h), out, quality=90, method=6)
 

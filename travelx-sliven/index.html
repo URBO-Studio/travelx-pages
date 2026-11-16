@@ -636,6 +636,8 @@ body.menu-open .drawer a{
 .partner:hover{border-color:var(--green-100);box-shadow:var(--e-1);transform:translateY(-2px)}
 .partner img{max-height:64px;max-width:100%;width:auto;object-fit:contain}
 .partner img[data-shape="wordmark"]{max-height:44px}
+/* very wide marks (4:1 and up) get two card widths so their small text stays legible */
+.partner--wide{flex-basis:352px}
 /* ═══ footer ═════════════════════════════════════════════════ */
 .footer{background:var(--navy-900);color:var(--ink-inv);padding-block:var(--s-9) var(--s-5)}
 .footer__top{
@@ -747,6 +749,7 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
   .why__grid,.speakers__grid,.partners__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   /* two 168px cards don't fit a 335px column — go 2-up instead of stacking */
   .partner{flex-basis:calc(50% - var(--s-2))}
+  .partner--wide{flex-basis:100%}
   /* stacked: the overhang has nothing to overhang, so drop it */
   .tiers{grid-template-columns:1fr;gap:var(--s-5)}
   .tier--featured{margin-block:0;padding-top:calc(var(--s-6) + 28px)}
@@ -1204,15 +1207,16 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
       <div class="partner"><img src="assets/partner-seomax.webp" alt="SEOMAX Digital Agency" data-shape="wordmark" width="215" height="44" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-img-connect-card.webp" alt="IMG Connect Card" data-shape="wordmark" width="239" height="44" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-hotelspoint.webp" alt="HotelsPoint" data-shape="wordmark" width="256" height="44" loading="lazy" decoding="async"></div>
-      <div class="partner"><img src="assets/partner-devin.webp" alt="Devin" data-shape="wordmark" width="110" height="44" loading="lazy" decoding="async"></div>
+      <div class="partner"><img src="assets/partner-devin-2.webp" alt="Devin — натурална минерална вода" width="132" height="64" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-dives.webp" alt="Dives Winery" width="133" height="64" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-abtta.webp" alt="АБТТА — Асоциация на българските туроператори и туристически агенти" data-shape="wordmark" width="179" height="44" loading="lazy" decoding="async"></div>
-      <!-- the last three in their own colours, as supplied (Nov 2026) -->
+      <!-- these, and Devin above, in their own colours, as supplied (Nov 2026) -->
       <div class="partner"><img src="assets/partner-travelradar.webp" alt="TravelRadar.bg — Открий света!" width="184" height="64" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-travelnews.webp" alt="TravelNews" data-shape="wordmark" width="309" height="44" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-sliven-press.webp" alt="Sliven Press" data-shape="wordmark" width="257" height="44" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-focus.svg" alt="Фокус" data-shape="wordmark" width="150" height="44" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-hotelone.svg" alt="HotelOne" data-shape="wordmark" width="228" height="44" loading="lazy" decoding="async"></div>
+      <div class="partner partner--wide"><img src="assets/partner-pght.webp" alt="Професионална гимназия по хотелиерство и туризъм" width="284" height="64" loading="lazy" decoding="async"></div>
     </div>  </div>
 </section>
 
