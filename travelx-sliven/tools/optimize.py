@@ -120,7 +120,8 @@ save(resize_h(trim(tr), 132), "partner-travelradar.webp", quality=90, method=6)
 for name in ("yanev", "ivanov", "petrova", "todorov", "draganova-2",
              "alexiev", "dimitrov", "todorova", "sirakov",
              "rangelova", "zlatina", "lilov", "markov", "stoyanov",
-             "georgiev", "gramova", "stoilov", "mermekliev"):
+             "georgiev", "gramova", "stoilov", "mermekliev",
+             "atanasova", "kapitanova", "kadieva", "dimchev"):
     im = trim(Image.open(SRC / f"speaker-{name}.png").convert("RGBA"))
     save(resize_w(im, 640), f"speaker-{name}.webp", quality=82, method=6)
 

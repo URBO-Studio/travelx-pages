@@ -503,6 +503,16 @@ body.menu-open .drawer a{
 .slot--break::before{background:transparent;border:1.5px solid var(--ink-inv-faint);box-shadow:none;width:8px;height:8px}
 .slot--break:hover::before{box-shadow:none}
 
+/* who sits on each panel, under its title: name, then position */
+.slot__people{grid-column:2;margin:var(--s-3) 0 var(--s-1);font-size:var(--t-sm);line-height:1.5;color:var(--ink-inv-soft)}
+.slot__people dt{
+  margin-top:var(--s-3);font-size:var(--t-xs);font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--green-300);
+}
+.slot__people dt:first-child{margin-top:0}
+.slot__people dd{margin:4px 0 0}
+.slot__people b{color:var(--ink-inv);font-weight:600}
+
 /* ═══ speakers ═══════════════════════════════════════════════ */
 .speakers__grid{
   display:grid;gap:var(--s-4);
@@ -526,6 +536,12 @@ body.menu-open .drawer a{
   display:flex;align-items:center;justify-content:center;
 }
 .speaker__tba{font-size:var(--t-sm);font-weight:600;letter-spacing:.01em;color:var(--grey-600)}
+/* announced, but no photo supplied yet: initials on the grey tile */
+.speaker__photo--none{
+  padding:0;background:var(--grey-100);color:var(--grey-600);
+  display:flex;align-items:center;justify-content:center;
+  font-size:var(--t-xl);font-weight:600;letter-spacing:.04em;
+}
 
 /* ═══ tickets ════════════════════════════════════════════════ */
 /* Cards left, forum copy right. The cards take the larger share so each
@@ -745,6 +761,7 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
 
 @media (max-width:600px){
   .slot{grid-template-columns:1fr;gap:2px;padding-block:var(--s-3)}
+  .slot__people{grid-column:auto}
   .slot::before{top:20px}
   .why__grid,.speakers__grid,.partners__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   /* two 168px cards don't fit a 335px column — go 2-up instead of stacking */
@@ -955,6 +972,16 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
       <div class="slot">
         <div class="slot__time">10:30 – 11:20</div>
         <div class="slot__title">Стратегии, управление и партньорства за изграждане на цялостна туристическа дестинация</div>
+        <dl class="slot__people">
+          <dt>Модератор</dt>
+          <dd><b>Андрей Лилов</b> – съосновател и изпълнителен директор, URBO Studio</dd>
+          <dt>Панелисти</dt>
+          <dd><b>Инж. Стоян Марков</b> – заместник-кмет „Икономическо развитие“, Община Сливен</dd>
+          <dd><b>Манол Тодоров</b> – заместник-кмет „Спорт и туризъм“, Община Бургас</dd>
+          <dd><b>Румен Стоилов</b> – заместник-кмет, Община Котел</dd>
+          <dd><b>Нели Кадиева</b> – директор, МИГ „Стралджа – Сливен“</dd>
+          <dd><b>Сия Атанасова</b> – директор на ОП по туризъм „Казанлък Арт“, Казанлък</dd>
+        </dl>
       </div>
       <div class="slot slot--break">
         <div class="slot__time">11:30 – 12:00</div>
@@ -963,6 +990,14 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
       <div class="slot">
         <div class="slot__time">12:00 – 12:50</div>
         <div class="slot__title">Културен код на града — наследство, преживявания и събития</div>
+        <dl class="slot__people">
+          <dt>Модератор</dt>
+          <dd><b>Доц. д-р Николай Сираков</b> – директор, Регионален исторически музей – Сливен</dd>
+          <dt>Панелисти</dt>
+          <dd><b>Надежда Янкова</b> – главен уредник, Исторически музей – Котел</dd>
+          <dd><b>Христо Димитров</b> – Ансамбъл „Българе“</dd>
+          <dd><b>Каролин Капитанова</b> – главен уредник в Художествена галерия „Димитър Добрович“ – Сливен</dd>
+        </dl>
       </div>
       <div class="slot slot--break">
         <div class="slot__time">13:00 – 14:00</div>
@@ -971,10 +1006,24 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
       <div class="slot">
         <div class="slot__time">14:00 – 14:50</div>
         <div class="slot__title">Нови модели за предлагане, пакетиране и развитие на туристически продукти</div>
+        <dl class="slot__people">
+          <dt>Модератор</dt>
+          <dd><b>Христо Янев</b> – управител на „ВИП – Сливен“ ООД</dd>
+          <dt>Панелисти</dt>
+          <dd><b>Милена Драганова</b> – собственик, Dan Travel</dd>
+          <dd><b>Александър Алексиев</b> – мениджър бизнес развитие, HotelsPoint</dd>
+        </dl>
       </div>
       <div class="slot">
         <div class="slot__time">15:00 – 15:50</div>
         <div class="slot__title">Да задържим туриста — настаняването като ключ към развитието на дестинацията</div>
+        <dl class="slot__people">
+          <dt>Модератор</dt>
+          <dd><b>Веселин Банковски</b> – председател на Национално сдружение на малкия и среден бизнес в туризма (НСМСБТ)</dd>
+          <dt>Панелисти</dt>
+          <dd><b>Атанас Мермеклиев</b> – предприемач и собственик на Kalina foods, Park Hotel Central и Secret Forest</dd>
+          <dd><b>Вени Петрова</b> – Бутик хотел „Даулите“</dd>
+        </dl>
       </div>
       <div class="slot slot--break">
         <div class="slot__time">16:00 – 16:20</div>
@@ -982,11 +1031,30 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
       </div>
       <div class="slot">
         <div class="slot__time">16:20 – 17:00</div>
-        <div class="slot__title">Как да развием гастрономическия потенциал на дестинацията в туристически продукт</div>
+        <div class="slot__title">Вкусът на града — гастрономия и вино като локален туристически капитал</div>
+        <dl class="slot__people">
+          <dt>Модератор</dt>
+          <dd><b>Мария Грамова</b> – директор, Професионална гимназия по туризъм в Сливен</dd>
+          <dt>Панелисти</dt>
+          <dd><b>Христо Стоянов</b> – собственик на Monte / ZARA, общински съветник</dd>
+          <dd><b>Василена Рангелова</b> – съсобственик, DiVes Estate</dd>
+          <dd><b>Шеф Светлин Канев</b></dd>
+        </dl>
       </div>
       <div class="slot">
         <div class="slot__time">17:00 – 17:40</div>
         <div class="slot__title">Технологии и дигитални услуги за по-достъпно, свързано и персонализирано туристическо преживяване</div>
+        <dl class="slot__people">
+          <dt>Модератор</dt>
+          <dd><b>Инж. Стоян Марков</b> – заместник-кмет „Икономическо развитие“, Община Сливен</dd>
+          <dt>Панелисти</dt>
+          <dd><b>Проф. д-р Станислав Иванов</b> – съучредител и председател на изследователски институт „Зангадор“</dd>
+          <dd><b>Мария Грамова</b> – директор, ПГХТ „Акад. Неделчо Неделчев“; представяне на BellaBot от STEM Туризъм център</dd>
+          <dd><b>Христо Янев</b> – управител на „ВИП – Сливен“ ООД</dd>
+          <dd><b>Д-р Златина Тодорова</b> – доктор по управление на културните организации чрез технологични иновации, Музей „Борис Христов“, София</dd>
+          <dd><b>Светослав Георгиев</b> – управляващ партньор, HotelOne</dd>
+          <dd><b>Виктор Димчев</b> – основател и президент, Travel TV</dd>
+        </dl>
       </div>
       <div class="slot">
         <div class="slot__time">17:40 – 18:00</div>
@@ -1032,6 +1100,12 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
         <p class="speaker__role">Модератор</p>
         <h3 class="speaker__name">Мария Грамова</h3>
         <p class="speaker__title">Директор, ПГХТ „Акад. Неделчо Неделчев“ – Сливен</p>
+      </li>
+      <li class="speaker">
+        <div class="speaker__photo speaker__photo--none" aria-hidden="true">ВБ</div>
+        <p class="speaker__role">Модератор</p>
+        <h3 class="speaker__name">Веселин Банковски</h3>
+        <p class="speaker__title">Председател на Национално сдружение на малкия и среден бизнес в туризма (НСМСБТ)</p>
       </li>
       <li class="speaker">
         <div class="speaker__photo"><img src="assets/speaker-alexiev.webp" alt="" width="640" height="654" loading="lazy" decoding="async"></div>
@@ -1116,6 +1190,35 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
         <p class="speaker__role">Гост-панелист</p>
         <h3 class="speaker__name">Атанас Мермеклиев</h3>
         <p class="speaker__title">Предприемач и собственик на Kalina foods, Park Hotel Central и Secret Forest</p>
+      </li>
+      <li class="speaker">
+        <div class="speaker__photo"><img src="assets/speaker-atanasova.webp" alt="" width="360" height="495" loading="lazy" decoding="async"></div>
+        <p class="speaker__role">Гост-панелист</p>
+        <h3 class="speaker__name">Сия Атанасова</h3>
+        <p class="speaker__title">Директор, Общинско предприятие по туризъм „Казанлък АРТ“</p>
+      </li>
+      <li class="speaker">
+        <div class="speaker__photo"><img src="assets/speaker-kapitanova.webp" alt="" width="506" height="473" loading="lazy" decoding="async"></div>
+        <p class="speaker__role">Гост-панелист</p>
+        <h3 class="speaker__name">Каролин Капитанова</h3>
+        <p class="speaker__title">Уредник в Художествена галерия „Димитър Добрович“ – Сливен</p>
+      </li>
+      <li class="speaker">
+        <div class="speaker__photo"><img src="assets/speaker-kadieva.webp" alt="" width="412" height="517" loading="lazy" decoding="async"></div>
+        <p class="speaker__role">Гост-панелист</p>
+        <h3 class="speaker__name">Нели Кадиева</h3>
+        <p class="speaker__title">Изпълнителен директор на „Местна инициативна група Стралджа – Сливен 2023“</p>
+      </li>
+      <li class="speaker">
+        <div class="speaker__photo"><img src="assets/speaker-dimchev.webp" alt="" width="593" height="484" loading="lazy" decoding="async"></div>
+        <p class="speaker__role">Гост-панелист</p>
+        <h3 class="speaker__name">Виктор Димчев</h3>
+        <p class="speaker__title">Основател и продуцент, Travel TV</p>
+      </li>
+      <li class="speaker">
+        <div class="speaker__photo speaker__photo--none" aria-hidden="true">СК</div>
+        <p class="speaker__role">Гост-панелист</p>
+        <h3 class="speaker__name">Шеф Светлин Канев</h3>
       </li>
     </ul>
   </div>
