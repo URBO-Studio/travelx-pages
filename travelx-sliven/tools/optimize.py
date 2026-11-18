@@ -102,6 +102,7 @@ for src, out, h in [
     ("partner-hotelspoint.png", "partner-hotelspoint.webp", 132),
     ("partner-devin-2.png", "partner-devin-2.webp", 160),         # shown 64px
     ("partner-pght.png", "partner-pght.webp", 160),
+    ("partner-coffee-spot.png", "partner-coffee-spot.webp", 160),
 ]:
     save(resize_h(trim(Image.open(SRC / src).convert("RGBA")), h), out, quality=90, method=6)
 
@@ -120,10 +121,16 @@ save(resize_h(trim(tr), 132), "partner-travelradar.webp", quality=90, method=6)
 for name in ("yanev", "ivanov", "petrova", "todorov", "draganova-2",
              "alexiev", "dimitrov", "todorova", "sirakov",
              "rangelova", "zlatina", "lilov", "markov", "stoyanov",
-             "georgiev", "gramova", "stoilov", "mermekliev",
-             "atanasova", "kapitanova", "kadieva", "dimchev"):
+             "georgiev", "gramova", "stoilov",
+             "atanasova", "kadieva", "dimchev"):
     im = trim(Image.open(SRC / f"speaker-{name}.png").convert("RGBA"))
     save(resize_w(im, 640), f"speaker-{name}.webp", quality=82, method=6)
+
+# Photos supplied with their own background (not cut-outs): shown full-bleed
+# in .speaker__photo--full. The source is small, so it is not upscaled.
+for name in ("mermekliev-2",):
+    save(Image.open(SRC / f"speaker-{name}.png").convert("RGB"), f"speaker-{name}.webp",
+         quality=86, method=6)
 
 total = sum(p.stat().st_size for p in OUT.rglob("*") if p.is_file())
 print(f"assets/ total: {total / 1024:.0f} KB")

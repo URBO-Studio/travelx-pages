@@ -528,6 +528,8 @@ body.menu-open .drawer a{
 }
 /* cut-outs are trimmed to the head, so the padding above is the headroom */
 .speaker__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+/* a photo with its own background fills the tile, no headroom */
+.speaker__photo--full{padding-top:0}
 .speaker__role{font-size:var(--t-xs);font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--green-700)}
 .speaker__name{font-size:var(--t-base);font-weight:700;line-height:1.25;color:var(--ink)}
 .speaker__title{font-size:var(--t-xs);line-height:1.45;color:var(--ink-soft)}
@@ -1074,14 +1076,14 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
     </div>
 
     <!-- From the Figma announcement posts (row of 1080x1080 frames on the TravelX
-         page). Moderators first, then panelists in canvas order. The grey
-         .speaker--tba tiles keep the last row full; replace one per new name. -->
+         page). Order set by the organisers: Markov, Sirakov, Lilov, the other
+         moderators, then panelists in canvas order. -->
     <ul class="speakers__grid reveal">
       <li class="speaker">
-        <div class="speaker__photo"><img src="assets/speaker-yanev.webp" alt="" width="640" height="803" loading="lazy" decoding="async"></div>
-        <p class="speaker__role">Модератор</p>
-        <h3 class="speaker__name">Христо Янев</h3>
-        <p class="speaker__title">Собственик, VisitBulgariaOn.com и MeOnTour.com</p>
+        <div class="speaker__photo"><img src="assets/speaker-markov.webp" alt="" width="640" height="538" loading="lazy" decoding="async"></div>
+        <p class="speaker__role">Модератор и панелист</p>
+        <h3 class="speaker__name">Инж. Стоян Марков</h3>
+        <p class="speaker__title">Заместник-кмет „Икономическо развитие“, Община Сливен</p>
       </li>
       <li class="speaker">
         <div class="speaker__photo"><img src="assets/speaker-sirakov.webp" alt="" width="640" height="841" loading="lazy" decoding="async"></div>
@@ -1094,6 +1096,12 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
         <p class="speaker__role">Модератор</p>
         <h3 class="speaker__name">Андрей Лилов</h3>
         <p class="speaker__title">Управител, URBO Studio</p>
+      </li>
+      <li class="speaker">
+        <div class="speaker__photo"><img src="assets/speaker-yanev.webp" alt="" width="640" height="803" loading="lazy" decoding="async"></div>
+        <p class="speaker__role">Модератор</p>
+        <h3 class="speaker__name">Христо Янев</h3>
+        <p class="speaker__title">Собственик, VisitBulgariaOn.com и MeOnTour.com</p>
       </li>
       <li class="speaker">
         <div class="speaker__photo"><img src="assets/speaker-gramova.webp" alt="" width="424" height="588" loading="lazy" decoding="async"></div>
@@ -1162,12 +1170,6 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
         <p class="speaker__title">Управление на културните организации чрез технологични иновации, Музей „Борис Христов“</p>
       </li>
       <li class="speaker">
-        <div class="speaker__photo"><img src="assets/speaker-markov.webp" alt="" width="640" height="538" loading="lazy" decoding="async"></div>
-        <p class="speaker__role">Гост-панелист</p>
-        <h3 class="speaker__name">Инж. Стоян Марков</h3>
-        <p class="speaker__title">Заместник-кмет „Икономическо развитие“, Община Сливен</p>
-      </li>
-      <li class="speaker">
         <div class="speaker__photo"><img src="assets/speaker-stoyanov.webp" alt="" width="640" height="713" loading="lazy" decoding="async"></div>
         <p class="speaker__role">Гост-панелист</p>
         <h3 class="speaker__name">Христо Стоянов</h3>
@@ -1186,7 +1188,7 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
         <p class="speaker__title">Заместник-кмет по програми, проекти, обществени поръчки и информационни системи, Община Котел</p>
       </li>
       <li class="speaker">
-        <div class="speaker__photo"><img src="assets/speaker-mermekliev.webp" alt="" width="526" height="457" loading="lazy" decoding="async"></div>
+        <div class="speaker__photo speaker__photo--full"><img src="assets/speaker-mermekliev-2.webp" alt="" width="330" height="274" loading="lazy" decoding="async"></div>
         <p class="speaker__role">Гост-панелист</p>
         <h3 class="speaker__name">Атанас Мермеклиев</h3>
         <p class="speaker__title">Предприемач и собственик на Kalina foods, Park Hotel Central и Secret Forest</p>
@@ -1198,7 +1200,7 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
         <p class="speaker__title">Директор, Общинско предприятие по туризъм „Казанлък АРТ“</p>
       </li>
       <li class="speaker">
-        <div class="speaker__photo"><img src="assets/speaker-kapitanova.webp" alt="" width="506" height="473" loading="lazy" decoding="async"></div>
+        <div class="speaker__photo speaker__photo--none" aria-hidden="true">КК</div>
         <p class="speaker__role">Гост-панелист</p>
         <h3 class="speaker__name">Каролин Капитанова</h3>
         <p class="speaker__title">Уредник в Художествена галерия „Димитър Добрович“ – Сливен</p>
@@ -1320,6 +1322,7 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
       <div class="partner"><img src="assets/partner-focus.svg" alt="Фокус" data-shape="wordmark" width="150" height="44" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-hotelone.svg" alt="HotelOne" data-shape="wordmark" width="228" height="44" loading="lazy" decoding="async"></div>
       <div class="partner partner--wide"><img src="assets/partner-pght.webp" alt="Професионална гимназия по хотелиерство и туризъм" width="284" height="64" loading="lazy" decoding="async"></div>
+      <div class="partner"><img src="assets/partner-coffee-spot.webp" alt="CoffeeSpot.bg" width="207" height="64" loading="lazy" decoding="async"></div>
     </div>  </div>
 </section>
 
