@@ -87,6 +87,7 @@ for src, out, h in [
     ("partner-seomax.png", "partner-seomax.webp", 132),            # shown 44px
     ("partner-img-connect-card.png", "partner-img-connect-card.webp", 132),
     ("partner-dives.png", "partner-dives.webp", 160),              # white-on-transparent original
+    ("partner-domaine-boyar.png", "partner-domaine-boyar.webp", 160),  # white-on-transparent original
     ("partner-abtta.png", "partner-abtta.webp", 132),
 ]:
     a = Image.open(SRC / src).convert("RGBA").getchannel("A")
