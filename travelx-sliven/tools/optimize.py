@@ -122,13 +122,14 @@ for name in ("yanev", "ivanov", "petrova", "todorov", "draganova-2",
              "alexiev", "dimitrov", "todorova", "sirakov",
              "rangelova", "zlatina", "lilov", "markov", "stoyanov",
              "georgiev", "gramova", "stoilov",
-             "atanasova", "kadieva", "dimchev"):
+             "atanasova", "kadieva", "dimchev",
+             "mermekliev-3", "bankovski", "kapitanova", "kanev"):
     im = trim(Image.open(SRC / f"speaker-{name}.png").convert("RGBA"))
     save(resize_w(im, 640), f"speaker-{name}.webp", quality=82, method=6)
 
 # Photos supplied with their own background (not cut-outs): shown full-bleed
 # in .speaker__photo--full. The source is small, so it is not upscaled.
-for name in ("mermekliev-2",):
+for name in ():
     save(Image.open(SRC / f"speaker-{name}.png").convert("RGB"), f"speaker-{name}.webp",
          quality=86, method=6)
 
