@@ -413,6 +413,10 @@ body.menu-open .drawer a{
 .organisers__row img{height:46px;width:auto;object-fit:contain}
 .organisers__row img[data-shape="crest"]{height:52px}
 .organisers__row img[data-shape="wordmark"]{height:34px}
+/* the municipality's crest carries its name underneath (their request, Nov 2026) */
+.org-crest{display:flex;flex-direction:column;align-items:center;gap:6px;margin:0}
+.organisers__row .org-crest img{height:52px}
+.org-crest figcaption{font-size:12px;font-weight:600;line-height:1.2;letter-spacing:.01em;color:var(--ink-inv);white-space:nowrap}
 
 /* Desktop: the headline block sits in the middle of the photo and the
    stats/organisers bar stays on the bottom edge, so on a tall or 4K screen
@@ -654,6 +658,9 @@ body.menu-open .drawer a{
 .partner:hover{border-color:var(--green-100);box-shadow:var(--e-1);transform:translateY(-2px)}
 .partner img{max-height:64px;max-width:100%;width:auto;object-fit:contain}
 .partner img[data-shape="wordmark"]{max-height:44px}
+.partner--crest{flex-direction:column;gap:4px;margin:0;padding-block:var(--s-3)}
+.partner--crest img{max-height:50px}
+.partner--crest figcaption{font-size:12px;font-weight:600;line-height:1.2;color:var(--ink);white-space:nowrap}
 /* very wide marks (4:1 and up) get two card widths so their small text stays legible */
 .partner--wide{flex-basis:352px}
 /* ═══ footer ═════════════════════════════════════════════════ */
@@ -885,7 +892,7 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
         <span>Организатори</span>
         <!-- hero order in the Figma differs from the footer's: museum second -->
         <div class="organisers__row">
-          <img src="assets/crest-white.webp" alt="Община Сливен" data-shape="crest" width="39" height="52">
+          <figure class="org-crest"><img src="assets/crest-color.webp" alt="" width="38" height="52"><figcaption>Община Сливен</figcaption></figure>
           <img src="assets/logo-rim-sliven.webp" alt="Регионален исторически музей Сливен" data-shape="crest" width="61" height="52">
           <img src="assets/logo-urbo-studio.webp" alt="URBO Studio" data-shape="wordmark" width="67" height="34">
           <img src="assets/logo-digital4.webp" alt="Digital4 Business Network" data-shape="wordmark" width="105" height="34">
@@ -1306,10 +1313,10 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
     <div class="partners__grid reveal">
       <div class="partner"><img src="assets/logo-sliven-tourism.webp" alt="Сливен — Изживей историята, почувствай природата!" width="76" height="64" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/logo-rim-sliven.webp" alt="Регионален исторически музей Сливен" width="76" height="64" loading="lazy" decoding="async"></div>
-      <!-- the municipality asked for its crest in black and white (Sep 2026) -->
-      <div class="partner"><img src="assets/crest-black.webp" alt="Община Сливен" width="48" height="64" loading="lazy" decoding="async"></div>
+      <!-- the municipality asked for the colour crest with its name under it (Nov 2026) -->
+      <figure class="partner partner--crest"><img src="assets/crest-color.webp" alt="" width="37" height="50" loading="lazy" decoding="async"><figcaption>Община Сливен</figcaption></figure>
       <div class="partner"><img src="assets/partner-urbo-city.svg" alt="URBO City" data-shape="wordmark" width="108" height="58" loading="lazy" decoding="async"></div>
-      <!-- from the main TravelX sponsors screen, black like the crest (Oct 2026) -->
+      <!-- from the main TravelX sponsors screen, in black (Oct 2026) -->
       <div class="partner"><img src="assets/partner-seomax.webp" alt="SEOMAX Digital Agency" data-shape="wordmark" width="215" height="44" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-img-connect-card.webp" alt="IMG Connect Card" data-shape="wordmark" width="239" height="44" loading="lazy" decoding="async"></div>
       <div class="partner"><img src="assets/partner-hotelspoint.webp" alt="HotelsPoint" data-shape="wordmark" width="256" height="44" loading="lazy" decoding="async"></div>
@@ -1376,7 +1383,7 @@ body.menu-open .mobile-cta{transform:translateY(140%)}
     <div class="footer__orgs">
       <span>Организатори</span>
       <div class="organisers__row">
-        <img src="assets/crest-white.webp" alt="Община Сливен" data-shape="crest" width="39" height="52">
+        <figure class="org-crest"><img src="assets/crest-color.webp" alt="" width="38" height="52"><figcaption>Община Сливен</figcaption></figure>
         <img src="assets/logo-urbo-studio.webp" alt="URBO Studio" data-shape="wordmark" width="67" height="34">
         <img src="assets/logo-rim-sliven.webp" alt="Регионален исторически музей Сливен" data-shape="crest" width="61" height="52">
         <img src="assets/logo-digital4.webp" alt="Digital4 Business Network" data-shape="wordmark" width="105" height="34">

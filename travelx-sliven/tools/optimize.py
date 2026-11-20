@@ -3,8 +3,8 @@
     python tools/optimize.py
 
 Photos -> AVIF at several widths plus a JPEG fallback. Logos -> trimmed WebP at
-~2.5-3x their largest display height. The one-colour Община Сливен crests are
-derived from the colour original (the municipality asked for black and white).
+~2.5-3x their largest display height. The Община Сливен crest is shown in
+colour with its name under it (the municipality asked, Nov 2026).
 """
 from pathlib import Path
 from PIL import Image, ImageChops
@@ -69,20 +69,13 @@ for src, out, h in [
 ]:
     save(resize_h(trim(Image.open(SRC / src).convert("RGBA")), h), out, quality=90, method=6)
 
-# ── one-colour crests: luminance <= LO is full ink, >= HI is none ──
-LO, HI = 150, 190
-color = Image.open(SRC / "obshtina-crest-color.png").convert("RGBA")
-ramp = color.convert("RGB").convert("L").point(
-    lambda v: 255 if v <= LO else 0 if v >= HI else int(255 * (HI - v) / (HI - LO)))
-ink = ImageChops.multiply(ramp, color.getchannel("A"))
-for rgb, name in (((255, 255, 255), "crest-white.webp"), ((0, 0, 0), "crest-black.webp")):
-    mono = Image.new("RGBA", color.size, rgb + (0,))
-    mono.putalpha(ink)
-    save(resize_h(mono.crop(mono.getbbox()), 160), name, quality=90, method=6)
+# ── Община Сливен crest, in colour (Nov 2026; it was one-colour before)
+save(resize_h(trim(Image.open(SRC / "obshtina-crest-color-2.png").convert("RGBA")), 160),
+     "crest-color.webp", quality=90, method=6)
 
-# ── one-colour partners: the logo's alpha as a black silhouette, so they sit
-#    with the black crest. Sources are the originals behind the white logos on
-#    the main TravelX sponsors screen (Figma 4822:559).
+# ── one-colour partners: the logo's alpha as a black silhouette. Sources are
+#    the originals behind the white logos on the main TravelX sponsors screen
+#    (Figma 4822:559).
 for src, out, h in [
     ("partner-seomax.png", "partner-seomax.webp", 132),            # shown 44px
     ("partner-img-connect-card.png", "partner-img-connect-card.webp", 132),
