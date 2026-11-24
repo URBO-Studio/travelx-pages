@@ -7,6 +7,8 @@
 | `travelx-sliven/` | https://travelx.bg/sliven/ | `wordpress/travelx-sliven.php` | `txs_` | `node serve.mjs` → http://localhost:4321 |
 | `travelx-plovdiv/` | https://travelx.bg/plovdiv/ (и `/plovdiv/bg/`) | `wordpress/travelx-plovdiv.php` | `txpv_` | `node serve.mjs` → http://localhost:4322 |
 
+`travelx-home/` е отделен малък плъгин без страница: пренасочва https://travelx.bg/ (302) към текущото събитие (`TXH_CURRENT`, сега `plovdiv`), а адресите на минали събития (`TXH_RETIRED`, сега `sliven`) към него, след като плъгинът на миналото събитие бъде деактивиран. За следващото събитие: сменете `TXH_CURRENT`, увеличете `TXH_VERSION`, `python tools/build.py`, качете zip-а. Деактивирането на плъгина връща старата начална страница.
+
 ## Структура на всяка папка
 
 - `index.html` - страницата (HTML, CSS и JS в един файл)
